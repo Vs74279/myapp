@@ -5,16 +5,19 @@ export default function TextForm(props) {
           console.log("uppercase was clicked" + text);
           let newText = text.toUpperCase();
           setText(newText)
+          props.showAlert("Converted to uppercase!","success");
 
     }
     const handleOnChange =(Event)=>{
           console.log("On change");
           setText(Event.target.value);
+        
 
     }
     const handleExtraSpaces =() =>{
       let newText = text.split(/[ ]+/)
       setText(newText.join(" "))
+      props.showAlert("Handle Extra spaces!","success");
     }
     const [text,setText] =useState("");
 
@@ -31,7 +34,7 @@ export default function TextForm(props) {
     <p>{text.split(" ").length} words and {text.length} characters</p>
     <p>{0.008 * text.split(" ").length} Minutes read</p>
     <h2>Preview</h2>
-    <p>{text}</p>
+    <p>{text.length>0?text:"Enter something to preview it here"}</p>
     </div>
     
   )
