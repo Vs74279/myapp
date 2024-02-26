@@ -12,6 +12,10 @@ export default function TextForm(props) {
           setText(Event.target.value);
 
     }
+    const handleExtraSpaces =() =>{
+      let newText = text.split(/[ ]+/)
+      setText(newText.join(" "))
+    }
     const [text,setText] =useState("");
 
   return (
@@ -21,7 +25,8 @@ export default function TextForm(props) {
      
       <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="9"></textarea>
       </div>
-      <button className='btn btn-primary' onClick={handleUpClick}>convert to uppercase</button>
+      <button my-3 className='btn btn-primary' onClick={handleUpClick}>convert to uppercase</button>
+      <button my-3  className='btn btn-primary' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
     <h2>your text summery</h2>
     <p>{text.split(" ").length} words and {text.length} characters</p>
     <p>{0.008 * text.split(" ").length} Minutes read</p>
