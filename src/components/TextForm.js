@@ -6,6 +6,7 @@ export default function TextForm(props) {
           let newText = text.toUpperCase();
           setText(newText)
           props.showAlert("Converted to uppercase!","success");
+          document.title = 'Vikashtech - UpperCase';
 
     }
     const handleOnChange =(Event)=>{
@@ -18,6 +19,7 @@ export default function TextForm(props) {
       let newText = text.split(/[ ]+/)
       setText(newText.join(" "))
       props.showAlert("Handle Extra spaces!","success");
+      document.title = 'Vikashtech - Extra space remove';
     }
     const [text,setText] =useState("");
 
