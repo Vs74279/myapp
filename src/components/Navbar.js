@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from 'prop-types'
 
 
+
 export default function Navbar(props){
   return(
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,7 +16,7 @@ export default function Navbar(props){
           <a className="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">About</a>
+          <a className="nav-link" href="/about">About</a>
         </li>
         
       </ul>

@@ -1,10 +1,16 @@
 
-import { useState } from 'react';
+import  React,{ useState } from 'react';
 import './App.css';
 import About from './components/About';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  
+} from "react-router-dom";
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -19,13 +25,30 @@ function App() {
   }
   return (
     <>
+    <Router>
      <Navbar title="Vikashtech"/>
      <Alert Alert={alert}/>
-     <div className='container'>
-      <TextForm showAlert={showAlert} heading='Enter the text to analyze below'/>
+     <div className='container my-3'>
+      <Routes>
       
-     <About/>
+      <Route path="/about" element={<About />} />
+
+          
+          
+        
+      
+          
+           
+        
+
+      </Routes>
       </div>
+      < TextForm showAlert={showAlert} heading='Enter the text to analyze below'/>
+     </Router> 
+      
+      
+     
+     
     </>
       
     
