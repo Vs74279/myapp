@@ -10,6 +10,8 @@ import {
   Routes,
   Route,
   
+  
+  
 } from "react-router-dom";
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
   return (
     <>
     <Router>
-     <Navbar title="Vikashtech"/>
+     <Navbar title="vikashtech"/>
      <Alert Alert={alert}/>
      <div className='container my-3'>
       <Routes>
