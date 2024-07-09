@@ -33,7 +33,7 @@ export default function TextForm(props) {
       <button  className='btn btn-primary mx-1 my-1' onClick={handleUpClick}>convert to uppercase</button>
       <button   className='btn btn-primary mx-1 my-1' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
     <h2>your text summery</h2>
-    <p>{text.split(" ").filter((element )=>{return element.length!==0}).length} words and {text.length} characters</p>
+    <p>{text.split(/\s+/).filter((element )=>{return element.length!==0}).length} words and {text.length} characters</p>
     <p>{0.008 * text.split(" ").filter((element )=>{return element.length!==0}).length} Minutes read</p>
     <h2>Preview</h2>
     <p>{text.length>0?text:"Enter something to preview it here"}</p>
